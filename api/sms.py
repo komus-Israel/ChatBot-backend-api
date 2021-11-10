@@ -12,7 +12,7 @@ from flask_cors import CORS, cross_origin
 from collections import Counter
 from .view_functions import (
                             search_engine, serialize_student, predict_class,
-                            getResponse, 
+                            getResponse, serialize_feedback
                             )
 from .model.train import train_bot
 from keras.models import load_model
@@ -290,16 +290,24 @@ def student_feedback():
     feedback = request.json['feedback']
     student_id = request.json['id']
 
-    feedback_submit = FeedBack(
-        feedback = feedback
-    )
-
     student_id = Student.query.filter_by(student_id=student_id).first()
 
-    feedback_submit.student_id = student_id
+    feedback_submit = FeedBack(
+        feedback = feedback,
+        student = student_id 
+    )
 
-    db.session.add(student_id)
+    db.session.add(feedback_submit)
     db.session.commit()
 
     return jsonify(status='success', msg='feedback submitted successfully')
+
+
+@sms.route('/feedbacks')
+@cross_origin()
+def feedbacks():
+    feedbacks = FeedBack.query.all()
+    serialized_feedback = [*map(serialize_feedback, feedbacks)]
+    return jsonify(status='success', feedbacks=serialized_feedback)
+
 

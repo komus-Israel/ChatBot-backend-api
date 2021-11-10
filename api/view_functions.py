@@ -1,4 +1,5 @@
-import json 
+import json
+from os import name 
 import numpy as np
 import numpy as np
 from .models import Student
@@ -29,6 +30,10 @@ def search_engine(query, search_param):
 
 def serialize_student(student_query):
     return dict(name=student_query.last_name + ' ' + student_query.first_name, matric_number=student_query.student_id, level = student_query.level)
+
+
+def serialize_feedback(query):
+    return dict(feedback=query.feedback, name = query.student.first_name  + ' ' + query.student.last_name, matric_no = query.student.student_id, read_status=query.read)
 
 
 # chat functionalities
