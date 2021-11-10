@@ -13,5 +13,6 @@ flask-admin
 numpy
 flask-wtf
 nltk
+tensorflow
 
 
