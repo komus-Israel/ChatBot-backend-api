@@ -1,6 +1,5 @@
 flask
 flask-sqlalchemy
-flask-httpauth
 pymysql
 flask-migrate
 flask-jwt-extended
@@ -11,9 +10,8 @@ gunicorn
 psycopg2-binary
 python-dotenv
 flask-admin
-cloudinary
 numpy
-flask-mail
 flask-wtf
+nltk
 
 

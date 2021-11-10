@@ -2,12 +2,12 @@ from flask import Blueprint, jsonify, request, make_response, g
 from keras.utils.io_utils import path_to_string
 from tensorflow.python.eager.context import context
 from .extensions import db
-from .models import Student, Admin
+from .models import FeedBack, Student, Admin, CustomModelView, FeedBack
 import json
 from datetime import datetime
 from datetime import date
 from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
-from .extensions import jwt
+from .extensions import jwt, admin
 from flask_cors import CORS, cross_origin
 from collections import Counter
 from .view_functions import (
@@ -23,6 +23,15 @@ from keras.models import load_model
 sms = Blueprint('sms', __name__)
 CORS(sms, resources={r"/sms/*": {"origins":"*"}})
 intents = json.loads(open("./api/model/chatbot.json").read())
+
+
+
+'''
+    Add admin views
+'''
+
+admin.add_view(CustomModelView(Student, db.session))
+admin.add_view(CustomModelView(FeedBack, db.session))
 
 
 
@@ -53,9 +62,10 @@ def register_student():
             error = KeyError.args
             return jsonify(status='failed', msg = f'{error[0]} field is missing in your request'), 400
 
-        check_student = Student.query.filter_by(student_id=matric_no).first()
+        check_student_from_student = Student.query.filter_by(student_id=matric_no).first()
+        check_student_from_admin = Admin.query.filter_by(admin_id=matric_no).first()
 
-        if check_student:
+        if check_student_from_admin or check_student_from_student:
             return jsonify(status='failed', msg='This matric has been registered')
 
         student = Student(
@@ -193,4 +203,103 @@ def chat_bot():
 
     return jsonify(status='success', response=bot_response)
 
+
+@sms.route('/login', methods=['POST'])
+@cross_origin()
+def login():
+    if request.method == 'POST':
+        try:
+            _id = request.json['id']
+            password = request.json['password']
+        except Exception as KeyError:
+            error = KeyError.args
+            return jsonify(status='failed', message = f'{error[0]} field is missing in your login request'), 400
     
+
+        student = Student.query.filter_by(student_id = _id).first()
+        admin = Admin.query.filter_by(admin_id = _id).first()
+    
+
+        if not student or not student.verify_password(password):
+            
+            if not admin or not admin.verify_password(password):
+                return jsonify(status = 'failed',msg = 'incorrect login details'), 403
+            else:
+                g.user = admin
+                
+                role = 'admin'
+            
+                access_token = create_access_token(identity = g.user.admin_id)
+                
+                return jsonify(access_token=access_token,status='success',msg= f'{g.user.admin_id} logged in successfully',
+                role=role, id = g.user.admin_id)
+        
+
+        g.user = student
+        role = 'student'
+    
+        access_token = create_access_token(identity = g.user.student_id)
+
+        
+        return jsonify(access_token=access_token, status = 'success',msg = f'{g.user.student_id} logged in successfully',
+            role=role, id = g.user.student_id)
+    
+
+
+
+@sms.route('/admin/register')
+@cross_origin()
+def admin_register():
+     if request.method == 'POST':
+        try:       
+            first_name = request.json['first_name']
+            last_name = request.json['last_name']
+            admin_id = request.json['admin_id']
+            password = request.json['password']
+        except Exception as KeyError:
+            error = KeyError.args
+            return jsonify(status='failed', msg = f'{error[0]} field is missing in your request'), 400
+
+        check_admin_from_student = Student.query.filter_by(student_id=admin_id).first()
+        check_admin_from_admin = Admin.query.filter_by(admin_id=admin_id).first()
+
+
+        if check_admin_from_student or check_admin_from_admin:
+            return jsonify(status='failed', msg='ID has been registered by another user')
+
+        admin = Admin(
+            
+            first_name = first_name,
+            last_name = last_name,
+            admin_id =admin_id,
+        )
+        
+        admin.hash_password(password)
+
+        db.session.add(admin)
+        db.session.commit()
+
+        return jsonify(status = 'success', msg = 'admin registered successfully')
+
+
+
+@sms.route('/student/feedback', methods= ['POST'])
+#@jwt_required()
+@cross_origin()
+def student_feedback():
+    feedback = request.json['feedback']
+    student_id = request.json['id']
+
+    feedback_submit = FeedBack(
+        feedback = feedback
+    )
+
+    student_id = Student.query.filter_by(student_id=student_id).first()
+
+    feedback_submit.student_id = student_id
+
+    db.session.add(student_id)
+    db.session.commit()
+
+    return jsonify(status='success', msg='feedback submitted successfully')
+

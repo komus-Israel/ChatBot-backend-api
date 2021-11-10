@@ -19,13 +19,11 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    #SQLALCHEMY_DATABASE_URI = "mysql://root:@localhost/hot_pan"
     SQLALCHEMY_DATABASE_URI = "postgresql://postgres:komolehin@localhost/sms"
 
 class ProductionConfig(Config):
     DEBUG = True
-    #SQLALCHEMY_DATABASE_URI = "mysql://kingdxlz_epi:episurvdb@premium93/kingdxlz_kwaralive"
-
+    
 class TestConfig(Config):
     DEBUG = True
     
