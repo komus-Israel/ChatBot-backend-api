@@ -19,6 +19,7 @@ from .model.train import train_bot
 from keras.models import load_model
 
 
+
 #   initialize the blueprint for the API version1
 
 sms = Blueprint('sms', __name__)
@@ -219,7 +220,7 @@ def login():
                 g.user = admin
                 
                 role = 'admin'
-                
+
                 access_token = create_access_token(identity = g.user.admin_id)
                 
                 return jsonify(access_token=access_token,status='success',msg= f'{g.user.admin_id} logged in successfully',
