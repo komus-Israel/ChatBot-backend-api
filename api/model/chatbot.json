@@ -1,1 +1,498 @@
-{"intents": [{"tag": "noanswer", "patterns": [""], "responses": ["Sorry, I didn't understand you", "Please give me more info", "Not sure I understand that"], "context": [""]}, {"tag": "", "patterns": ["timetable", "need timetable", "download timetable", "get timetable"], "responses": ["you can download from google.com"], "context": [""]}, {"tag": "goodbye", "patterns": ["bye", "good bye", "see you later"], "responses": ["have a nice time, welcome back again", "bye bye"], "context": [""]}, {"tag": "thanks", "patterns": ["Thanks", "okay", "Thank you", "thankyou", "That's helpful", "Awesome, thanks", "Thanks for helping me", "wow", "great"], "responses": ["Happy to help!", "Any time!", "you're welcome", "My pleasure"], "context": [""]}, {"tag": "greetings", "patterns": ["hi there", "hello", "hi", "hey", "holla", "hello"], "responses": ["hello thanks for checking in", "hi there, how can i help you"], "context": [""]}, {"tag": "AI", "patterns": ["  What is AI?"], "responses": [" Artificial Intelligence is the branch of engineering and science devoted to constructing machines that think.", " AI is the field of science which concerns itself with building hardware and software that replicates the functions of the human mind."], "context": [""]}, {"tag": "artificial", "patterns": ["  You are an artificial linguistic entity "], "responses": [" That's my name.", " That isn't my name, but it is a useful way to refer to me.", "Are you an artificial linguistic entity?"], "context": [""]}, {"tag": "name1", "patterns": ["what's your name?", "who are you?"], "responses": ["I'm just a chat agent. I only exist in the internet", "I'm a KCA chat agent"], "context": [""]}, {"tag": "name", "patterns": ["my name is ", "I'm ", "I am"], "responses": ["Oooh great to meet you {n}. How may I assist you {n}", "Oh, I'll keep that in mind {n}"], "context": [""]}, {"tag": "material", "patterns": ["new material"], "responses": ["download from google"], "context": [""]}]}
+{
+        "intents": [
+                {
+                        "tag": "greeting",
+                        "patterns": [
+                                "Hi",
+                                "How are you",
+                                "Is anyone there?",
+                                "Hello",
+                                "Good day",
+                                "Whats up",
+                                "how are ya",
+                                "heyy",
+                                "whatsup"
+                        ],
+                        "responses": [
+                                "Hello!",
+                                "Good to see you again!",
+                                "Hi there, how can I help?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "goodbye",
+                        "patterns": [
+                                "cya",
+                                "see you",
+                                "bye bye",
+                                "See you later",
+                                "Goodbye",
+                                "I am Leaving",
+                                "Bye",
+                                "Have a Good day",
+                                "talk to you later",
+                                "tyyl",
+                                "i got to go",
+                                "gtg"
+                        ],
+                        "responses": [
+                                "Sad to see you go :(",
+                                "Talk to you later",
+                                "Goodbye!",
+                                "Come back soon"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "creator",
+                        "patterns": [
+                                "what is the name of your developers",
+                                "what is the name of your creators",
+                                "what is the name of the developers",
+                                "what is the name of the creators",
+                                "who created you",
+                                "your developers",
+                                "your creators",
+                                "who are your developers",
+                                "developers",
+                                "you are made by",
+                                "you are made by whom",
+                                "who created you",
+                                "who create you",
+                                "creators",
+                                "who made you",
+                                "who designed you"
+                        ],
+                        "responses": [
+                                "Dada Joshua, for his final year project 2021"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "name",
+                        "patterns": [
+                                "name",
+                                "your name",
+                                "do you have a name",
+                                "what are you called",
+                                "what is your name",
+                                "what should I call you",
+                                "whats your name?",
+                                "what are you",
+                                "who are you",
+                                "who is this",
+                                "what am i chatting to",
+                                "who am i taking to",
+                                "what are you"
+                        ],
+                        "responses": [
+                                "You can call me NacosBot Chatbot.",
+                                "I'm a department Enquiry Chatbot",
+                                "I'm NacosBot Chatbot aka department Enquiry Chatbot"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "hours",
+                        "patterns": [
+                                "timing of department",
+                                "what is department timing",
+                                "working days",
+                                "when are you guys open",
+                                "what are your hours",
+                                "hours of operation",
+                                "when is the department open",
+                                "department timing",
+                                "what about department timing",
+                                "is department open on saturday",
+                                "tell something about department timing",
+                                "what is the department  hours",
+                                "when should i come to department",
+                                "when should i attend department",
+                                "what is my department time",
+                                "department timing",
+                                "timing department"
+                        ],
+                        "responses": [
+                                "department is open 9am-5pm Monday-Friday!"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "contact",
+                        "patterns": [
+                                "more info",
+                                "contact info",
+                                "how to contact department",
+                                "department telephone number",
+                                "department number",
+                                "What is your contact no",
+                                "Contact number?",
+                                "how to call you",
+                                "department phone no?",
+                                "how can i contact you",
+                                "Can i get your phone number",
+                                "how can i call you",
+                                "phone number",
+                                "phone no",
+                                "call"
+                        ],
+                        "responses": [
+                                "You can contact at 08070000000"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "course",
+                        "patterns": [
+                                "list of 400l courses",
+                                "list of 400l courses offered",
+                                "list of 400l courses offered in department of computer science",
+                                "what are the courses offered by 400l students in your department?",
+                                "what are the courses offered by 400l students in the department?",
+                                "400l courses?",
+                                "courses offered in 400l",
+                                "courses offered in 400level",
+                                "courses for 400"
+                        ],
+                        "responses": [
+                                "The following list shows the courses offered in 400l"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "fees",
+                        "patterns": [
+                                "information about fee",
+                                "information on fee",
+                                "tell me the fee",
+                                "departmental fee",
+                                "fee",
+                                "what is this year department fee",
+                                "what is the fees of each year",
+                                "what is fee",
+                                "what is the fees",
+                                "how much is the fees",
+                                "fees for fourth year",
+                                "fees for 400 level",
+                                "400l fee?",
+                                "fees",
+                                "about the fees",
+                                "tell me something about the fees"
+                        ],
+                        "responses": [
+                                "For Fee details visit "
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "location",
+                        "patterns": [
+                                "where is the department located",
+                                "department is located at",
+                                "where is department",
+                                "where is department located",
+                                "address of department",
+                                "how to reach department",
+                                "department location",
+                                "department address",
+                                "wheres the department",
+                                "how can I reach department",
+                                "whats is the department address",
+                                "what is the address of department",
+                                "address",
+                                "location"
+                        ],
+                        "responses": [
+                                "First gate, Faculty of science"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "infrastructure",
+                        "patterns": [
+                                "infrastructure",
+                                "building",
+                                "number of floors in bulding",
+                                "department infrastructure",
+                                "departments and labs",
+                                "departments",
+                                "labs",
+                                "canteen",
+                                "infrastructure of the department",
+                                "tell me about infrastructure",
+                                "what about infrastructure"
+                        ],
+                        "responses": [
+                                " For campus tour please visit the following link.",
+                                "For infrastructure details visit "
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "event",
+                        "patterns": [
+                                "events organised",
+                                "list of events",
+                                "list of events organised in department",
+                                "list of events conducted in department",
+                                "What events are conducted in department",
+                                "Are there any event held at department",
+                                "department week",
+                                "when is the departmental week",
+                                "Events?",
+                                "functions",
+                                "what are the events",
+                                "tell me about events",
+                                "what about events"
+                        ],
+                        "responses": [
+                                "Our department organizes various events during academics.Many Events are useful for technical skils and recreational activities.There are many events which are held by deparments.<a target=\"_blank\" href=\"https://NacosBot.ac.in/news-and-events/news-notifications/\"> here</a>",
+                                "Our Department organizes FESTIVAL every year.There are major 2 fest in our department."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "Transfer",
+                        "patterns": [
+                                "document to bring",
+                                "documents needed for admision",
+                                "documents needed at the time of defer",
+                                "documents needed during defer",
+                                "documents required for admision",
+                                "documents required at the time of defer",
+                                "documents required during defer",
+                                "What document are required for defer",
+                                "Which document to bring for defer",
+                                "documents",
+                                "what documents do i need",
+                                "what documents do I need for defer",
+                                "documents needed"
+                        ],
+                        "responses": [
+                                "To know more about documents required visit<a target=\"_blank\" href=\"https://NacosBot.ac.in/academics/defers/list-of-document-required/\"> here</a>"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "Defer",
+                        "patterns": [
+                                "document to bring for defering",
+                                "How to defer a semester",
+                                "How to defer a semester",
+                                "How to defer a semester",
+                                "defer a session",
+                                "defer a session",
+                                "deferring",
+                                "documents needed for defering",
+                                "documents needed at the time of defer",
+                                "documents needed during defer",
+                                "documents required for admision",
+                                "documents required at the time of defer",
+                                "documents required during defer",
+                                "What document are required for defer",
+                                "Which document to bring for defer",
+                                "documents",
+                                "what documents do i need to defer",
+                                "documents needed to defer"
+                        ],
+                        "responses": [
+                                "To know more about documents required. Download the following document "
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "library",
+                        "patterns": [
+                                "is there any library",
+                                "library facility",
+                                "library facilities",
+                                "do you have library",
+                                "does the department have library facility",
+                                "department library",
+                                "where can i get books",
+                                "book facility",
+                                "Where is library",
+                                "Library",
+                                "Tell me about library",
+                                "how many libraries"
+                        ],
+                        "responses": [
+                                "NacosBot has a huge and spacious library on the second floor. For more details visit <a target=\"_blank\" href=\"https://NacosBot.ac.in/library/library-information/\"> here</a>"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "canteen",
+                        "patterns": [
+                                "food facilities",
+                                "canteen facilities",
+                                "canteen facility",
+                                "is there any canteen",
+                                "Is there a cafetaria in department",
+                                "Does department have canteen",
+                                "Where is canteen",
+                                "where is cafetaria",
+                                "canteen",
+                                "Cafetaria"
+                        ],
+                        "responses": [
+                                "There is none",
+                                "Consider Amos at Bello Hall"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "HOD",
+                        "patterns": [
+                                "Who is Computer Department HOD",
+                                "Who is HOD of Computer department",
+                                "Where is HOD",
+                                "computer department hod",
+                                "name of computer department hod",
+                                "Who is HOD",
+                                "HOD"
+                        ],
+                        "responses": [
+                                "Mr. Dada Joshua is Current HOD who is available on the 4th floor."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "facilities",
+                        "patterns": [
+                                "What facilities department provide",
+                                "department facility",
+                                "What are department facilities",
+                                "facilities",
+                                "facilities provided"
+                        ],
+                        "responses": [
+                                "Computer Department provides Labs with internet connection, smart classroom, Auditorium, library,canteen. Labs are equipped with modern technologies. Also there is bus facility for the students and faculty"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "uniform",
+                        "patterns": [
+                                "department dress code",
+                                "department dresscode",
+                                "what is the uniform",
+                                "can we wear casuals",
+                                "Does department have an uniform",
+                                "Is there any uniform",
+                                "uniform",
+                                "what about uniform",
+                                "do we have to wear uniform"
+                        ],
+                        "responses": [
+                                "Computer Department does not have a Dressing Code"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "random",
+                        "patterns": [
+                                "I love you",
+                                "Will you marry me",
+                                "Do you love me"
+                        ],
+                        "responses": [
+                                "I am not program for this please ask appropriate query"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "swear",
+                        "patterns": [
+                                "fuck",
+                                "bitch",
+                                "shut up",
+                                "hell",
+                                "stupid",
+                                "idiot",
+                                "dumb ass",
+                                "asshole",
+                                "fucker"
+                        ],
+                        "responses": [
+                                "please use appropriate language",
+                                "Your response has been recorded and sent to the department authorities",
+                                "Maintaining decency would be appreciated"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "salutaion",
+                        "patterns": [
+                                "okk",
+                                "okie",
+                                "nice work",
+                                "well done",
+                                "good job",
+                                "thanks for the help",
+                                "Thank You",
+                                "its ok",
+                                "Thanks",
+                                "k",
+                                "ok",
+                                "Aight",
+                                "ok",
+                                "alright",
+                                "okay"
+                        ],
+                        "responses": [
+                                "I am glad I helped you",
+                                "welcome, anything else i can assist you with?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "task",
+                        "patterns": [
+                                "what can you do",
+                                "what are the thing you can do",
+                                "things you can do",
+                                "what can u do for me",
+                                "how u can help me",
+                                "why i should use you"
+                        ],
+                        "responses": [
+                                "I can answer to low-intermediate questions regarding department",
+                                "You can ask me questions regarding department, and i will try to answer them"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "faculty portal",
+                        "patterns": [
+                                "faculty portal",
+                                "give student faculty link",
+                                "faculty portal?",
+                                "where is faculty portal",
+                                "NacosBot fcaulty portal",
+                                "how to get faculty portal",
+                                "please provide faculty portal link"
+                        ],
+                        "responses": [
+                                "For Faculty portal link visit<a target=\"_blank\" href=/\"https:/\">here</a>"
+                        ]
+                },
+                {
+                        "tag": "sports",
+                        "patterns": [
+                                "sports and games",
+                                "give sports details",
+                                "sports infrastructure",
+                                "sports facilities",
+                                "NacosBot sports facilities",
+                                "information about sports",
+                                "please provide sports and games information"
+                        ],
+                        "responses": [
+                                "Computer Department encourages all-round development of students and hence provides sports facilities in the campus. For more details visit<a target=\"_blank\" href=/\"https://NacosBot.ac.in/students/sports-and-games/\">here</a>"
+                        ]
+                }
+        ]
+}

@@ -10,6 +10,7 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     JWT_SECRET_KEY = '23refdhgyjt7iukyjhkmdgfgrt5657uyjhgmftre54y6uthgmj'
     JWT_ACCESS_TOKEN_EXPIRES = False
+    
    
     
     

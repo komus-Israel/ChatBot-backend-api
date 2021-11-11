@@ -1,4 +1,5 @@
-from flask import Blueprint, jsonify, request, make_response, g
+from flask import Blueprint, jsonify, request, make_response, g, Flask
+from flask_jwt_extended.utils import get_current_user
 from keras.utils.io_utils import path_to_string
 from tensorflow.python.eager.context import context
 from .extensions import db
@@ -53,7 +54,6 @@ def register_student():
     if request.method == 'POST':
 
         try:
-            
             first_name = request.json['first_name']
             last_name = request.json['last_name']
             level = request.json['level']
@@ -153,7 +153,7 @@ def train():
     if (tag == '' or  patterns == '' or responses == ''):
         return jsonify(status='failed', msg = "tag, patterns or responses can't be empty")
 
-    new_intent = dict(tag=tag, patterns=patterns, responses=responses, context=[''])
+    new_intent = dict(tag=tag, patterns=patterns, responses=responses, context_set="")
 
     with open("./api/model/chatbot.json" , 'r') as bot_intent:
         intents = json.load(bot_intent)
@@ -166,18 +166,8 @@ def train():
     train = train_bot()
    
     if train:
-        model = load_model("./api/model/chatbot_model.h5")
+        #Flask.run()
 
-        '''try:
-            predict_message = predict_class('test', model)
-        except:
-            with open("./api/model/chatbot.json" , 'r') as bot_intent:
-                intents = json.load(bot_intent)
-                intents['intents'].pop(-1)
-            with open("./api/model/chatbot.json", 'w') as new_file:
-	            json.dump(intents, new_file)
-            return jsonify(status='failed', msg='unknown error occured. Kindly retrain your bot')'''
-            
         return jsonify(status='success', msg = 'bot updated successfully')
 
 
@@ -186,6 +176,7 @@ def train():
 def train_bot_with_no_update():
     train = train_bot()
     if train:
+        
         return jsonify(status='success', msg = 'bot updated successfully')
 
 
@@ -228,7 +219,7 @@ def login():
                 g.user = admin
                 
                 role = 'admin'
-            
+                
                 access_token = create_access_token(identity = g.user.admin_id)
                 
                 return jsonify(access_token=access_token,status='success',msg= f'{g.user.admin_id} logged in successfully',
@@ -284,11 +275,11 @@ def admin_register():
 
 
 @sms.route('/student/feedback', methods= ['POST'])
-#@jwt_required()
+@jwt_required()
 @cross_origin()
 def student_feedback():
     feedback = request.json['feedback']
-    student_id = request.json['id']
+    student_id = get_jwt_identity()
 
     student_id = Student.query.filter_by(student_id=student_id).first()
 
@@ -310,4 +301,16 @@ def feedbacks():
     serialized_feedback = [*map(serialize_feedback, feedbacks)]
     return jsonify(status='success', feedbacks=serialized_feedback)
 
+
+
+@sms.route('/student/profile')
+@jwt_required()
+@cross_origin()
+def student_profile():
+    student_matric_no = get_jwt_identity()
+    student = Student.query.filter_by(student_id=student_matric_no).first()
+
+    student_profile = dict(name=student.last_name + ' ' + student.first_name, matric_no = student.student_id, level=student.level)
+
+    return jsonify(status='success', student_profile=student_profile)
 

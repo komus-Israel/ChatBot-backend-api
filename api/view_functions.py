@@ -63,7 +63,6 @@ def predict_class(sentence, model):
     # filter out predictions below a threshold
     p = bow(sentence, words, show_details=False)
     res = model.predict(np.array([p]))[0]
-    print(len(p))
     ERROR_THRESHOLD = 0.25
     results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
     # sort by strength of probability
@@ -80,6 +79,6 @@ def getResponse(ints, intents_json):
     for i in list_of_intents:
         if i["tag"] == tag:
             result = random.choice(i["responses"])
-            print(result)
+        
             break
     return result

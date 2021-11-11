@@ -31,6 +31,7 @@ def create_app(config_name):
     app.register_blueprint(sms, url_prefix='/sms')
     
     
+    
 
 
     return app
