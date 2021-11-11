@@ -167,8 +167,6 @@ def train():
     train = train_bot()
    
     if train:
-        #Flask.run()
-
         return jsonify(status='success', msg = 'bot updated successfully')
 
 
@@ -185,7 +183,6 @@ def train_bot_with_no_update():
 @cross_origin()
 def chat_bot():
     message = request.args.get('message')
-    print(message)
 
     model = load_model("./api/model/chatbot_model.h5")
     

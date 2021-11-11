@@ -1,7 +1,6 @@
 import json
 from os import name 
 import numpy as np
-import numpy as np
 from .models import Student
 import random
 import nltk
@@ -81,4 +80,13 @@ def getResponse(ints, intents_json):
             result = random.choice(i["responses"])
         
             break
+    try:
+        result
+    except UnboundLocalError as e:
+       result =  random.choice([
+            "ops!, your request seems to be beyond the scope of my data",
+            "I'm not really sure I understand your request, you can contact the admin for better feedback",
+            "I'm sorry, I do not really understand your request"
+            ])
+
     return result
