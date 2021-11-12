@@ -13,7 +13,7 @@ from flask_cors import CORS, cross_origin
 from collections import Counter
 from .view_functions import (
                             search_engine, serialize_student, predict_class,
-                            getResponse, serialize_feedback
+                            getResponse, serialize_feedback, json_patterns
                             )
 from .model.train import train_bot
 from keras.models import load_model
@@ -184,14 +184,23 @@ def train_bot_with_no_update():
 def chat_bot():
     message = request.args.get('message')
 
+    good_bye_message = ["cya","see you","bye bye","See you later","Goodbye","I am Leaving",
+                        "Bye","Have a Good day", "talk to you later", "tyyl", "i got to go","gtg"
+                        ]
+
+
     model = load_model("./api/model/chatbot_model.h5")
-    
 
     predict_message = predict_class(message, model)
     bot_response = getResponse(predict_message, intents)
 
-    return jsonify(status='success', response=bot_response)
 
+    if message in good_bye_message:
+        return jsonify(available_patterns=[], response=bot_response)
+
+    patterns = json_patterns() 
+    return jsonify(available_patterns=patterns, response=bot_response)
+    
 
 @sms.route('/login', methods=['POST'])
 @cross_origin()
@@ -311,4 +320,8 @@ def student_profile():
     student_profile = dict(name=student.last_name + ' ' + student.first_name, matric_no = student.student_id, level=student.level)
 
     return jsonify(status='success', student_profile=student_profile)
+
+
+
+
 

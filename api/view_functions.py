@@ -90,3 +90,10 @@ def getResponse(ints, intents_json):
             ])
 
     return result
+
+def json_patterns():
+    patterns = [intent['patterns'] for intent in intents['intents']]
+    random_patterns = [np.random.choice(pattern) for pattern in np.random.choice(patterns, 4) if len(pattern) >= 4]
+    return random_patterns
+
+
