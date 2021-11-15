@@ -8,6 +8,7 @@ from nltk.stem import WordNetLemmatizer
 import pickle
 import json
 from keras.models import load_model
+from datetime import datetime
 
 lemmatizer = WordNetLemmatizer()
 
@@ -43,14 +44,14 @@ def clean_up_sentence(sentence):
 
 
 # return bag of words array: 0 or 1 for each word in the bag that exists in the sentence
-def bow(sentence, words, show_details=True):
+def bag_of_words(sentence, words, show_details=True):
     # tokenize the pattern
     sentence_words = clean_up_sentence(sentence)
     # bag of words - matrix of N words, vocabulary matrix
     bag = [0] * len(words)
-    for s in sentence_words:
+    for sentence in sentence_words:
         for i, w in enumerate(words):
-            if w == s:
+            if w == sentence:
                 # assign 1 if current word is in the vocabulary position
                 bag[i] = 1
                 if show_details:
@@ -60,7 +61,7 @@ def bow(sentence, words, show_details=True):
 
 def predict_class(sentence, model):
     # filter out predictions below a threshold
-    p = bow(sentence, words, show_details=False)
+    p = bag_of_words(sentence, words, show_details=False)
     res = model.predict(np.array([p]))[0]
     ERROR_THRESHOLD = 0.25
     results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
@@ -78,8 +79,13 @@ def getResponse(ints, intents_json):
     for i in list_of_intents:
         if i["tag"] == tag:
             result = random.choice(i["responses"])
-        
-            break
+            try:
+                options = i['options']
+                use_details = True
+            except Exception as e:
+                options = []
+                use_details = False
+
     try:
         result
     except UnboundLocalError as e:
@@ -88,12 +94,27 @@ def getResponse(ints, intents_json):
             "I'm not really sure I understand your request, you can contact the admin for better feedback",
             "I'm sorry, I do not really understand your request"
             ])
+    
 
-    return result
+    return dict(response = result, options = options, use_details=use_details)
 
 def json_patterns():
     patterns = [intent['patterns'] for intent in intents['intents']]
     random_patterns = [np.random.choice(pattern) for pattern in np.random.choice(patterns, 4) if len(pattern) >= 4]
     return random_patterns
+
+def getTime():
+    record_time = datetime.now().strftime("%I:%M:%S")
+
+    if datetime.now().hour >= 12:
+        record_time = record_time[:5] + 'pm'
+    else:
+        record_time = record_time[:5] + 'am'
+
+    return record_time
+
+
+def log_serializer(query):
+    return dict(student_msg = query.student_msg, bot_msg = query.bot_msg)
 
 

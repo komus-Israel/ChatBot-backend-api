@@ -1,9 +1,10 @@
 from flask import Blueprint, jsonify, request, make_response, g, Flask
 from flask_jwt_extended.utils import get_current_user
 from keras.utils.io_utils import path_to_string
+from nltk import probability
 from tensorflow.python.eager.context import context
 from .extensions import db
-from .models import FeedBack, Student, Admin, CustomModelView, FeedBack
+from .models import FeedBack, Student, Admin, CustomModelView, ChatLog
 import json
 from datetime import datetime
 from datetime import date
@@ -13,7 +14,7 @@ from flask_cors import CORS, cross_origin
 from collections import Counter
 from .view_functions import (
                             search_engine, serialize_student, predict_class,
-                            getResponse, serialize_feedback, json_patterns
+                            getResponse, serialize_feedback, getTime, log_serializer
                             )
 from .model.train import train_bot
 from keras.models import load_model
@@ -26,6 +27,8 @@ sms = Blueprint('sms', __name__)
 CORS(sms, resources={r"/sms/*": {"origins":"*"}})
 intents = json.loads(open("./api/model/chatbot.json").read())
 
+tags = [intent['tag'] for intent in intents['intents']]
+
 
 
 '''
@@ -34,6 +37,7 @@ intents = json.loads(open("./api/model/chatbot.json").read())
 
 admin.add_view(CustomModelView(Student, db.session))
 admin.add_view(CustomModelView(FeedBack, db.session))
+admin.add_view(CustomModelView(ChatLog, db.session))
 
 
 
@@ -180,26 +184,66 @@ def train_bot_with_no_update():
 
 
 @sms.route('/chat')
+@jwt_required()
 @cross_origin()
 def chat_bot():
+     
+    student_id = get_jwt_identity()
+    student_id = Student.query.filter_by(student_id=student_id).first()
+
+
     message = request.args.get('message')
+    student_time = getTime()
 
-    good_bye_message = ["cya","see you","bye bye","See you later","Goodbye","I am Leaving",
-                        "Bye","Have a Good day", "talk to you later", "tyyl", "i got to go","gtg"
-                        ]
+    
 
+    if message[0] == ' ':
+        message = message.replace(' ', '',1)
+    
+    matched_tags = [tag for tag in tags if message in tag]
+    response = 'kindly select one of these options below'
+    bot_response_time = getTime()
+
+    if len(matched_tags) > 1:
+        options = matched_tags
+
+        msg_log = ChatLog(
+            student = student_id,
+            bot_msg = response,
+            student_msg = message,
+            student_time = student_time,
+            bot_response_time = bot_response_time
+        )
+
+        db.session.add(msg_log)
+        db.session.commit()
+
+        return jsonify(status = 'success', options=options, response=response, use_details=False)
 
     model = load_model("./api/model/chatbot_model.h5")
 
     predict_message = predict_class(message, model)
+
     bot_response = getResponse(predict_message, intents)
 
+    bot_response_time = getTime()
 
-    if message in good_bye_message:
-        return jsonify(available_patterns=[], response=bot_response)
+    msg_log = ChatLog(
+            student = student_id,
+            bot_msg = bot_response['response'],
+            student_msg = message,
+            student_time = student_time,
+            bot_response_time = bot_response_time
+    )
 
-    patterns = json_patterns() 
-    return jsonify(available_patterns=patterns, response=bot_response)
+    db.session.add(msg_log)
+    db.session.commit()
+
+ 
+    bot_response['status']= 'success'
+
+
+    return bot_response
     
 
 @sms.route('/login', methods=['POST'])
@@ -322,6 +366,16 @@ def student_profile():
     return jsonify(status='success', student_profile=student_profile)
 
 
+
+@sms.route('/chat-log')
+@cross_origin()
+def chat_log():
+    matric_no = request.args.get('matric_no')
+    student = Student.query.filter_by(student_id = matric_no).first()
+    logs = ChatLog.query.filter_by(student=student).all()
+    serialized_logs = [*map(log_serializer, logs)]
+
+    return jsonify(status='success', log = serialized_logs)
 
 
 

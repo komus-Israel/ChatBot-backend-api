@@ -144,20 +144,48 @@
                         "context_set": ""
                 },
                 {
-                        "tag": "course",
+                        "tag": "course materials",
                         "patterns": [
-                                "list of 400l courses",
-                                "list of 400l courses offered",
-                                "list of 400l courses offered in department of computer science",
-                                "what are the courses offered by 400l students in your department?",
-                                "what are the courses offered by 400l students in the department?",
-                                "400l courses?",
-                                "courses offered in 400l",
-                                "courses offered in 400level",
-                                "courses for 400"
+                                "course materials",
+                                "course materials of this level",
+                                "what are my course materials"
                         ],
                         "responses": [
-                                "The following list shows the courses offered in 400l"
+                                "<h3>Here is a list of your course materials</h3><ul><li>CSC 403</li><li>CSC 402</li><li>CSC 404</li><li>CSC 407</li><ul/>"
+                        
+                        ],
+                        "context_set": "",
+                        "options": []
+                },
+                {
+                        "tag": "course details",
+                        "patterns": [
+                                "course details",
+                                "details of courses offered",
+                                "give me my course details"
+                        ],
+                        "responses": [
+                                "Select the course you'll like to obtain information about"
+                        ],
+                        "context_set": "",
+                        "options":[
+                                {"name":"CSC 403", "details":"Scientific computing"},
+                                {"name":"CSC 402", "details":"python programming 3"},
+                                {"name":"CSC 404", "details":"Data Visualization"},
+                                {"name":"CSC 407", "details":"Advanced Data Structures and Algorithm"}
+                        ]
+                },
+                {
+                        "tag": "course registration",
+                        "patterns": [
+                                "course registration",
+                                "tell me about course registration",
+                                "give me details about course registration",
+                                "can you help me with details abput course registration",
+                                "can you help me with information about course registration"
+                        ],
+                        "responses": [
+                                "Course registration starts first week of registation"
                         ],
                         "context_set": ""
                 },

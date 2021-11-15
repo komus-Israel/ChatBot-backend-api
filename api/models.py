@@ -11,8 +11,6 @@ from flask_admin.contrib.sqla import ModelView
 
 class Student(db.Model):
 
-    #__tablename__ = 'Customer'
-
     id = db.Column(db.Integer, primary_key =True)
     student_id = db.Column(db.String(200), index =True, nullable=False)
     date_registered = db.Column(db.String(200), nullable=False, default=date.today)
@@ -21,6 +19,8 @@ class Student(db.Model):
     level = db.Column(db.String(200), index =True)
     password_hash = db.Column(db.String(200), nullable = False)
     student = db.relationship('FeedBack', backref = 'student')
+    student_chat = db.relationship('ChatLog', backref = 'student')
+     
      
 
     def hash_password(self, password):
@@ -34,8 +34,6 @@ class Student(db.Model):
     
 
 class Admin(db.Model):
-
-    #__tablename__ = 'Customer'
 
     id = db.Column(db.Integer, primary_key =True)
     admin_id = db.Column(db.String(200), index =True, nullable=False)
@@ -65,5 +63,16 @@ class CustomModelView(ModelView):
 
     can_export = True
     can_delete = True 
+
+
+class ChatLog(db.Model):
+    id = db.Column(db.Integer, primary_key =True)
+    date = db.Column(db.String(200), nullable=False, default=date.today)
+    student_msg = db.Column(db.Text)
+    bot_msg = db.Column(db.Text)
+    student_time = db.Column(db.String(200))
+    bot_response_time = db.Column(db.String(200))
+    student_id = db.Column(db.Integer, db.ForeignKey('student.id'))
+
 
 
