@@ -204,7 +204,7 @@ def chat_bot():
     response = 'kindly select one of these options below'
     bot_response_time = getTime()
 
-    if len(matched_tags) > 1:
+    '''if len(matched_tags) > 1:
         options = matched_tags
 
         msg_log = ChatLog(
@@ -218,7 +218,7 @@ def chat_bot():
         db.session.add(msg_log)
         db.session.commit()
 
-        return jsonify(status = 'success', options=options, response=response, use_details=False)
+        return jsonify(status = 'success', options=options, response=response, use_details=False)'''
 
     model = load_model("./api/model/chatbot_model.h5")
 

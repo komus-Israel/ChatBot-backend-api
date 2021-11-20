@@ -81,10 +81,8 @@ def getResponse(ints, intents_json):
             result = random.choice(i["responses"])
             try:
                 options = i['options']
-                use_details = True
             except Exception as e:
                 options = []
-                use_details = False
 
     try:
         result
@@ -96,7 +94,7 @@ def getResponse(ints, intents_json):
             ])
     
 
-    return dict(response = result, options = options, use_details=use_details)
+    return dict(response = result, options = options)
 
 def json_patterns():
     patterns = [intent['patterns'] for intent in intents['intents']]

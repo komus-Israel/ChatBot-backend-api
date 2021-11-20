@@ -1,0 +1,525 @@
+{
+        "intents": [
+                {
+                        "tag": "greeting",
+                        "patterns": [
+                                "Hi",
+                                "How are you",
+                                "Is anyone there?",
+                                "Hello",
+                                "Good day",
+                                "Whats up",
+                                "how are ya",
+                                "heyy",
+                                "whatsup"
+                        ],
+                        "responses": [
+                                "Hello!",
+                                "Good to see you again!",
+                                "Hi there, how can I help?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "goodbye",
+                        "patterns": [
+                                "cya",
+                                "see you",
+                                "bye bye",
+                                "See you later",
+                                "Goodbye",
+                                "I am Leaving",
+                                "Bye",
+                                "Have a Good day",
+                                "talk to you later",
+                                "tyyl",
+                                "i got to go",
+                                "gtg"
+                        ],
+                        "responses": [
+                                "Sad to see you go :(",
+                                "Talk to you later",
+                                "Goodbye!",
+                                "Come back soon"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "creator",
+                        "patterns": [
+                                "what is the name of your developers",
+                                "what is the name of your creators",
+                                "what is the name of the developers",
+                                "what is the name of the creators",
+                                "who created you",
+                                "your developers",
+                                "your creators",
+                                "who are your developers",
+                                "developers",
+                                "you are made by",
+                                "you are made by whom",
+                                "who created you",
+                                "who create you",
+                                "creators",
+                                "who made you",
+                                "who designed you"
+                        ],
+                        "responses": [
+                                "Dada Joshua, for his final year project 2021"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "name",
+                        "patterns": [
+                                "name",
+                                "your name",
+                                "do you have a name",
+                                "what are you called",
+                                "what is your name",
+                                "what should I call you",
+                                "whats your name?",
+                                "what are you",
+                                "who are you",
+                                "who is this",
+                                "what am i chatting to",
+                                "who am i taking to",
+                                "what are you"
+                        ],
+                        "responses": [
+                                "You can call me NacosBot Chatbot.",
+                                "I'm a department Enquiry Chatbot",
+                                "I'm NacosBot Chatbot aka department Enquiry Chatbot"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "hours",
+                        "patterns": [
+                                "timing of department",
+                                "what is department timing",
+                                "working days",
+                                "when are you guys open",
+                                "what are your hours",
+                                "hours of operation",
+                                "when is the department open",
+                                "department timing",
+                                "what about department timing",
+                                "is department open on saturday",
+                                "tell something about department timing",
+                                "what is the department  hours",
+                                "when should i come to department",
+                                "when should i attend department",
+                                "what is my department time",
+                                "department timing",
+                                "timing department"
+                        ],
+                        "responses": [
+                                "department is open 9am-5pm Monday-Friday!"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "contact",
+                        "patterns": [
+                                "more info",
+                                "contact info",
+                                "how to contact department",
+                                "department telephone number",
+                                "department number",
+                                "What is your contact no",
+                                "Contact number?",
+                                "how to call you",
+                                "department phone no?",
+                                "how can i contact you",
+                                "Can i get your phone number",
+                                "how can i call you",
+                                "phone number",
+                                "phone no",
+                                "call"
+                        ],
+                        "responses": [
+                                "Follow the link to get contact details<a target=\"_blank\" href=\"https://sci.ui.edu.ng/compscicontact/\">pay now</a>"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "course",
+                        "patterns": [
+                                "list of 400l courses",
+                                "list of 400l courses offered",
+                                "list of 400l courses offered in department of computer science",
+                                "what are the courses offered by 400l students in your department?",
+                                "what are the courses offered by 400l students in the department?",
+                                "400l courses?",
+                                "courses offered in 400l",
+                                "courses offered in 400level",
+                                "courses for 400"
+                        ],
+                        "responses": [
+                                "The following list shows the courses offered in 400l"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "fees",
+                        "patterns": [
+                                "information about fee",
+                                "information on fee",
+                                "tell me the fee",
+                                "departmental fee",
+                                "fee",
+                                "what is this year department fee",
+                                "what is the fees of each year",
+                                "what is fee",
+                                "what is the fees",
+                                "how much is the fees",
+                                "fees for fourth year",
+                                "fees for 400 level",
+                                "400l fee?",
+                                "fees",
+                                "about the fees",
+                                "tell me something about the fees"
+                        ],
+                        "responses": [
+                                " <h1>NACOS DUES</h1> <pre>  The procedure for payment is simple: <ul><li>Fill in your matric No and email</li><li>You are then directed to a page where you fill in your student biodata</li><li>The compulsory fees are already preset for each level. If you want to pay for an optional due, check the particular due at the bottom of the form and click Proceed to Pay</li><li>Then choose your preferred payment method and make payment</li><li>You would then get a dues payment receipt in your email.</li></ul>Follow the link to <a target=\"_blank\" href=\"https://dues.rabba.co/app/$nacosui/\">pay now</a></pre>"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "location",
+                        "patterns": [
+                                "where is the department located",
+                                "department is located at",
+                                "where is department",
+                                "where is department located",
+                                "address of department",
+                                "how to reach department",
+                                "department location",
+                                "department address",
+                                "wheres the department",
+                                "how can I reach department",
+                                "whats is the department address",
+                                "what is the address of department",
+                                "address",
+                                "location"
+                        ],
+                        "responses": [
+                                "First gate, Faculty of science"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "infrastructure",
+                        "patterns": [
+                                "infrastructure",
+                                "building",
+                                "number of floors in bulding",
+                                "department infrastructure",
+                                "departments and labs",
+                                "departments",
+                                "labs",
+                                "canteen",
+                                "infrastructure of the department",
+                                "tell me about infrastructure",
+                                "what about infrastructure"
+                        ],
+                        "responses": [
+                                " For campus tour please visit the following link.",
+                                "For infrastructure details visit "
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "event",
+                        "patterns": [
+                                "events organised",
+                                "list of events",
+                                "list of events organised in department",
+                                "list of events conducted in department",
+                                "What events are conducted in department",
+                                "Are there any event held at department",
+                                "department week",
+                                "when is the departmental week",
+                                "Events?",
+                                "functions",
+                                "what are the events",
+                                "tell me about events",
+                                "what about events"
+                        ],
+                        "responses": [
+                                "Our department organizes various events during academics.Many Events are useful for technical skils and recreational activities.There are many events which are held by deparments.<a target=\"_blank\" href=\"https://NacosBot.ac.in/news-and-events/news-notifications/\"> here</a>",
+                                "Our Department organizes FESTIVAL every year.There are major 2 fest in our department."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "Transfer",
+                        "patterns": [
+                                "document to bring",
+                                "documents needed for admision",
+                                "documents needed at the time of defer",
+                                "documents needed during defer",
+                                "documents required for admision",
+                                "documents required at the time of defer",
+                                "documents required during defer",
+                                "What document are required for defer",
+                                "Which document to bring for defer",
+                                "documents",
+                                "what documents do i need",
+                                "what documents do I need for defer",
+                                "documents needed"
+                        ],
+                        "responses": [
+                                "To know more about documents required visit<a target=\"_blank\" href=\"https://NacosBot.ac.in/academics/defers/list-of-document-required/\"> here</a>"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "Defer",
+                        "patterns": [
+                                "document to bring for defering",
+                                "How to defer a semester",
+                                "How to defer a semester",
+                                "How to defer a semester",
+                                "defer a session",
+                                "defer a session",
+                                "deferring",
+                                "documents needed for defering",
+                                "documents needed at the time of defer",
+                                "documents needed during defer",
+                                "documents required for admision",
+                                "documents required at the time of defer",
+                                "documents required during defer",
+                                "What document are required for defer",
+                                "Which document to bring for defer",
+                                "documents",
+                                "what documents do i need to defer",
+                                "documents needed to defer"
+                        ],
+                        "responses": [
+                                "To know more about documents required. Download the following document "
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "library",
+                        "patterns": [
+                                "is there any library",
+                                "library facility",
+                                "library facilities",
+                                "do you have library",
+                                "does the department have library facility",
+                                "department library",
+                                "where can i get books",
+                                "book facility",
+                                "Where is library",
+                                "Library",
+                                "Tell me about library",
+                                "how many libraries"
+                        ],
+                        "responses": [
+                                "NacosBot has a huge and spacious library on the second floor. For more details visit <a target=\"_blank\" href=\"https://NacosBot.ac.in/library/library-information/\"> here</a>"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "canteen",
+                        "patterns": [
+                                "food facilities",
+                                "canteen facilities",
+                                "canteen facility",
+                                "is there any canteen",
+                                "Is there a cafetaria in department",
+                                "Does department have canteen",
+                                "Where is canteen",
+                                "where is cafetaria",
+                                "canteen",
+                                "Cafetaria"
+                        ],
+                        "responses": [
+                                "There is none",
+                                "Consider Amos at Bello Hall"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "HOD",
+                        "patterns": [
+                                "Who is Computer Department HOD",
+                                "Who is HOD of Computer department",
+                                "Where is HOD",
+                                "computer department hod",
+                                "name of computer department hod",
+                                "Who is HOD",
+                                "HOD"
+                        ],
+                        "responses": [
+                                "<h1>DR. IBIYINKA T. AYORINDE</h1> <pre> <div><p>NAME<p><p>Ibiyinka Temilola, AYORINDE</p></div> <div><p>ACADEMIC AND PROFESSIONAL QUALIFICATION:</p><p>B.Tech. (Hons) Computer Science, Federal University of Technology, Akure (FUTA) 1995, M.Sc. Computer Science, University of Ibadan, 2005, Ph.D Computer Science, University of Ibadan, 2014.</p></div><div><p>DESIGNATION:</p><p>Senior Lecturer</p></div><div><p>AREA OF SPECIALISATION:</p><p>Knowledge Representation, Software Engineering and Data Mining</p></div><div><p>OFFICE ADDRESS:</p><p>Block A ,Room 10, Computer Science Building.</p></div><div><p>PHONE NUMBER:</p><p>+2348035289814</p></div>for more information <a target=\"_blank\" href=\"https://sci.ui.edu.ng/content/dr-ibiyinka-t-ayorinde/\"> Check Here</a></pre>"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "facilities",
+                        "patterns": [
+                                "What facilities department provide",
+                                "department facility",
+                                "What are department facilities",
+                                "facilities",
+                                "facilities provided"
+                        ],
+                        "responses": [
+                                "Computer Department provides Labs with internet connection, smart classroom, Auditorium, library,canteen. Labs are equipped with modern technologies. Also there is bus facility for the students and faculty"
+                        ],
+                        "context_set": ""
+                }, {
+                        "tag": "dressing code",
+                        "patterns": [
+                                "department dress code",
+                                "department dresscode",
+                                "what is the uniform",
+                                "can we wear casuals",
+                                "Does department have an uniform",
+                                "Is there any uniform",
+                                "uniform",
+                                "what about uniform",
+                                "do we have to wear uniform"
+                        ],
+                        "responses": [
+                                "Computer Department does not have a Dressing Code"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "Lecturers",
+                        "patterns": [
+                                "department staffs",
+                                "department teaching staffs",
+                                "list of lectures",
+                                "qualifications of lecturers in the department",
+                                "lecturers"
+                        ],
+                        "responses": [
+                                " The following is the List of Computer Science Department teaching staffs and their qualifications. <a target=\"_blank\" href=\"https://sci.ui.edu.ng/compscistaff/\"> Check Here</a>"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "random",
+                        "patterns": [
+                                "I love you",
+                                "Will you marry me",
+                                "Do you love me"
+                        ],
+                        "responses": [
+                                "I am not program for this please ask appropriate query"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "swear",
+                        "patterns": [
+                                "fuck",
+                                "bitch",
+                                "shut up",
+                                "hell",
+                                "stupid",
+                                "idiot",
+                                "dumb ass",
+                                "asshole",
+                                "fucker"
+                        ],
+                        "responses": [
+                                "please use appropriate language",
+                                "Your response has been recorded and sent to the department authorities",
+                                "Maintaining decency would be appreciated"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "salutaion",
+                        "patterns": [
+                                "okk",
+                                "okie",
+                                "nice work",
+                                "well done",
+                                "good job",
+                                "thanks for the help",
+                                "Thank You",
+                                "its ok",
+                                "Thanks",
+                                "k",
+                                "ok",
+                                "Aight",
+                                "ok",
+                                "alright",
+                                "okay"
+                        ],
+                        "responses": [
+                                "I am glad I helped you",
+                                "welcome, anything else i can assist you with?"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "task",
+                        "patterns": [
+                                "what can you do",
+                                "what are the thing you can do",
+                                "things you can do",
+                                "what can u do for me",
+                                "how u can help me",
+                                "why i should use you",
+                                "tasks you can perform",
+                                "what are the tasks you can perform"
+                        ],
+                        "responses": [
+                                "I can provide real-time answers to Computer Science department queries."
+                        ],
+                        "context_set": ""
+                },{
+                        "tag": "csc 412",
+                        "patterns": [
+                                "csc 412",
+                                "who is the lecturer for csc 412",
+                                "materials for 412",
+                                "hours for csc 412",
+                                "date and time for csc 412"
+                        ],
+                        "responses": [
+                                "<h3>Computer Architecture and Organization</h3><pre>  Follow the link to Course Code: CSC 412Course Title:                        Computer Architecture and Organization Lecturer:                            Mr O. Adeleke No. of Units:                        4 Course Duration:                     One hour of theory. Status: Compulsory Course Email Address:                <a target=\"_blank\" href=\"https://sci.ui.edu.ng/content/o-adeleke-0/\">pay now</a> Course MMaterials:                   <a target=\"_blank\" href=\"https://drive.google.com/folderview?id=19LnikEchXsw5xk5g3N2olaQvLFJkBXrL/\">pay now</a> Prerequisite: None</pre>"
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "History",
+                        "patterns": [
+                                "Compueter Science department history",
+                                "History of computer science department",
+                                "Computer science history",
+                                "History",
+                                "NacosBot fcaulty portal",
+                                "how to get faculty portal",
+                                "please provide faculty portal link"
+                        ],
+                        "responses": [
+                                " <h1> HISTORY: DEPARTMENT OF COMPUTER SCIENCE</h1><pre><b>Name of Department</b>COMPUTER SCIENCE<b>Date of establishment</b>1974<h1><Strong>History</Strong></h1><br>The proposal for the department was written in 1973, and the department wasestablished in 1974.The first set of 21 Computer Science graduates finishedin 1976.  The department was conceived as a means of training manpower to meet the demand for increasing computerization.The Department started with two academic staff, Professor Olu Longe and Dr.J. O. Adeniyi and six non-academic staff. Professor Olu Longe was the founding Head of Department.Dr J.O. Adeniyi served as Acting Head of Department of Computer Science between 1988 and 1990. Between 1990 and 1991 the Department was headed by the Dean of the Faculty of Science, Professor Ayo Babalola of the Department of Physics, while Dr S.O. Ojo served as Departmental coordinator.Between 1991 and 1998, Professor Olu Longe served as Head of Department.Between 1998 and 1999 the Department was headed by the Dean of theFaculty of Science, Professor Idowu Iweibo of the Department of Chemistry.Professor Adenike Osofisan first served as Acting Head of Department between 1999 and 2008. Under her leadership the Department began a postgraduate programme in 2000. The first PhD graduate of the programme graduated in late 2004.  In 2007 the first PhD graduate of the University of Ibadan-University of Nancy exchange completed his PhD research at the University of Nancy in France. Upon graduation Dr. A.B.C. Robert returned to his job at the University of Ibadan. In 2008, a team of student programmers from the department won the NMCACM National Programming Contest at the National Mathematical Centre, Abuja. In 2010, the first PhD graduate of the double PhD agreement between the University of Ibadan and the University of Nancy successfully defended his thesis at the University of Nancy and the University of Ibadan. Upon successful defence of his thesis, Dr. O.F.W. Onifade returned to his job at the University of Ibadan.  In 2010, a member of the department Dr. Angela Makolo won the Best paper award at the PhD research consortium organized by the Nigerian Computer Society.Dr B.O. Akinkunmi served as Acting Head of Department between 2008 and 2010. Professor Osofisan served as Head of Department between 2010 and 2012 when she was appointed as the first Director of the University of Ibadan Business School. Dr. B. O. Akinkunmi again took over as Acting Head of Department from 2012 to December 2013.  The current Acting head of Department, Dr. A. B. Adeyemo,took over from Dr. B.O. Akinkunmi from January 2014. </pre>"
+                        ]
+                },
+                {
+                        "tag": "sports",
+                        "patterns": [
+                                "sports and games",
+                                "give sports details",
+                                "sports infrastructure",
+                                "sports facilities",
+                                "NacosBot sports facilities",
+                                "information about sports",
+                                "please provide sports and games information"
+                        ],
+                        "responses": [
+                                "Computer Department encourages all-round development of students and hence provides sports facilities in the campus. For more details visit<a target=\"_blank\" href=/\"https://NacosBot.ac.in/students/sports-and-games/\">here</a>"
+                        ]
+                }
+        ]
+}

@@ -33,12 +33,11 @@
                                 "Have a Good day",
                                 "talk to you later",
                                 "tyyl",
-                                "let's end this",
-                                "end",
                                 "i got to go",
                                 "gtg"
                         ],
                         "responses": [
+                                "Sad to see you go :(",
                                 "Talk to you later",
                                 "Goodbye!",
                                 "Come back soon"
@@ -89,8 +88,8 @@
                         ],
                         "responses": [
                                 "You can call me NacosBot Chatbot.",
-                                "I'm DCS Chatbot",
-                                "I'm NacosBot Chatbot"
+                                "I'm a department Enquiry Chatbot",
+                                "I'm NacosBot Chatbot aka department Enquiry Chatbot"
                         ],
                         "context_set": ""
                 },
@@ -116,7 +115,7 @@
                                 "timing department"
                         ],
                         "responses": [
-                                "Department is open 9am-5pm Monday-Friday!"
+                                "department is open 9am-5pm Monday-Friday!"
                         ],
                         "context_set": ""
                 },
@@ -149,48 +148,14 @@
                         "patterns": [
                                 "course materials",
                                 "course materials of this level",
-                                "I need course materials",
-                                "I need course materials",
-                                "I need materials",
-                                "I want course materials",
-                                "400l materials",
-                                "400l course materials"
-
+                                "what are my course materials"
                         ],
                         "responses": [
-                                "Select course for materials"
+                                "<h3>Here is a list of your course materials</h3><ul><li>CSC 403</li><li>CSC 402</li><li>CSC 404</li><li>CSC 407</li><ul/>"
                         
                         ],
                         "context_set": "",
-                        "options":[
-                                "CSC 412",
-                                "CSC 421",
-                                "CSC 452",
-                                "CSC 334",
-                                "CSC 333",
-                                "CSC 411",
-                                "CSC 433",
-                                "CSC 422",
-                                "CSC 301",
-                                "CSC 472",
-                                "CSC 431"
-                        ]
-                },{
-                        "tag": "course",
-                        "patterns": [
-                                "400l course",
-                                "course"
-                                
-                        ],
-                        "responses": [
-                                "Select an option let's continue"
-                        
-                        ],
-                        "context_set": "",
-                        "options":[
-                                "course registration",
-                                "course details",
-                                "course materials"                        ]
+                        "options": []
                 },
                 {
                         "tag": "course details",
@@ -204,144 +169,11 @@
                         ],
                         "context_set": "",
                         "options":[
-                                "CSC 412",
-                                "CSC 421",
-                                "CSC 452",
-                                "CSC 334",
-                                "CSC 333",
-                                "CSC 411",
-                                "CSC 433",
-                                "CSC 422",
-                                "CSC 301",
-                                "CSC 472",
-                                "CSC 431"
+                                {"name":"CSC 403", "details":"Scientific computing"},
+                                {"name":"CSC 402", "details":"python programming 3"},
+                                {"name":"CSC 404", "details":"Data Visualization"},
+                                {"name":"CSC 407", "details":"Advanced Data Structures and Algorithm"}
                         ]
-                },
-                {
-                        "tag": "csc 412",
-                        "patterns": [
-                                "csc 412",
-                                "who is the lecturer for csc 412",
-                                "materials for 412",
-                                "hours for csc 412",
-                                "date and time for csc 412"
-                        ],
-                        "responses": [" <div><h3>CSC 412</h3><h4>Computer Architecture and Organization</h4><br><b>Course Title:</b>  Computer Architecture and Organization<br><b>Lecturer:</b>  Mr O. Adeleke<br><b>No. of Units:</b> 4<br><b>Course Duration:</b>One hour of theory.<br><b>Status:</b> Compulsory<br><b>Course Email Address:</b><br><b>Course Materials:</b><a target=\"_blank\" href=\"https://drive.google.com/folderview?id=19LnikEchXsw5xk5g3N2olaQvLFJkBXrL/\">view materials</a></div> "],
-                        "context_set": ""
-                },
-                {
-                        "tag": "csc 433",
-                        "patterns": [
-                                "csc 433",
-                                "who is the lecturer for csc 433",
-                                "materials for 433",
-                                "hours for csc 433",
-                                "date and time for csc 433"
-                        ],
-                        "responses": [" <div><h3>CSC 412</h3><h4>Computer Architecture and Organization</h4><br><b>Course Title:</b>  Computer Architecture and Organization<br><b>Lecturer:</b>  Mr O. Adeleke<br><b>No. of Units:</b> 4<br><b>Course Duration:</b>One hour of theory.<br><b>Status:</b> Compulsory<br><b>Course Email Address:</b><br><b>Course Materials:</b><a target=\"_blank\" href=\"https://drive.google.com/folderview?id=19LnikEchXsw5xk5g3N2olaQvLFJkBXrL/\">view materials</a></div> "],
-                        "context_set": ""
-                },
-                {
-                        "tag": "csc 301",
-                        "patterns": [
-                                "csc 301",
-                                "who is the lecturer for csc 301",
-                                "materials for 301",
-                                "hours for csc 301",
-                                "date and time for csc 301"
-                        ],
-                        "responses": [" <div><h3>CSC 412</h3><h4>Computer Architecture and Organization</h4><br><b>Course Title:</b>  Computer Architecture and Organization<br><b>Lecturer:</b>  Mr O. Adeleke<br><b>No. of Units:</b> 4<br><b>Course Duration:</b>One hour of theory.<br><b>Status:</b> Compulsory<br><b>Course Email Address:</b><br><b>Course Materials:</b><a target=\"_blank\" href=\"https://drive.google.com/folderview?id=19LnikEchXsw5xk5g3N2olaQvLFJkBXrL/\">view materials</a></div> "],
-                        "context_set": ""
-                },{
-                        "tag": "csc 421",
-                        "patterns": [
-                                "csc 421",
-                                "who is the lecturer for csc 421",
-                                "materials for 421",
-                                "hours for csc 421",
-                                "date and time for csc 421"
-                        ],
-                        "responses": [" <div><h3>CSC 412</h3><h4>Computer Architecture and Organization</h4><br><b>Course Title:</b>  Computer Architecture and Organization<br><b>Lecturer:</b>  Mr O. Adeleke<br><b>No. of Units:</b> 4<br><b>Course Duration:</b>One hour of theory.<br><b>Status:</b> Compulsory<br><b>Course Email Address:</b><br><b>Course Materials:</b><a target=\"_blank\" href=\"https://drive.google.com/folderview?id=19LnikEchXsw5xk5g3N2olaQvLFJkBXrL/\">view materials</a></div> "],
-                        "context_set": ""
-                },{
-                        "tag": "csc 422",
-                        "patterns": [
-                                "csc 422",
-                                "who is the lecturer for csc 422",
-                                "materials for 422",
-                                "hours for csc 422",
-                                "date and time for csc 422"
-                        ],
-                        "responses": [" <div><h3>CSC 412</h3><h4>Computer Architecture and Organization</h4><br><b>Course Title:</b>  Computer Architecture and Organization<br><b>Lecturer:</b>  Mr O. Adeleke<br><b>No. of Units:</b> 4<br><b>Course Duration:</b>One hour of theory.<br><b>Status:</b> Compulsory<br><b>Course Email Address:</b><br><b>Course Materials:</b><a target=\"_blank\" href=\"https://drive.google.com/folderview?id=19LnikEchXsw5xk5g3N2olaQvLFJkBXrL/\">view materials</a></div> "],
-                        "context_set": ""
-                },{
-                        "tag": "csc 334",
-                        "patterns": [
-                                "csc 334",
-                                "who is the lecturer for csc 334",
-                                "materials for 334",
-                                "hours for csc 334",
-                                "date and time for csc 334"
-                        ],
-                        "responses": [" <div><h3>CSC 412</h3><h4>Computer Architecture and Organization</h4><br><b>Course Title:</b>  Computer Architecture and Organization<br><b>Lecturer:</b>  Mr O. Adeleke<br><b>No. of Units:</b> 4<br><b>Course Duration:</b>One hour of theory.<br><b>Status:</b> Compulsory<br><b>Course Email Address:</b><br><b>Course Materials:</b><a target=\"_blank\" href=\"https://drive.google.com/folderview?id=19LnikEchXsw5xk5g3N2olaQvLFJkBXrL/\">view materials</a></div> "],
-                        "context_set": ""
-                },
-                {
-                        "tag": "csc 333",
-                        "patterns": [
-                                "csc 333",
-                                "who is the lecturer for csc 333",
-                                "materials for 333",
-                                "hours for csc 333",
-                                "date and time for csc 333"
-                        ],
-                        "responses": [" <div><h3>CSC 412</h3><h4>Computer Architecture and Organization</h4><br><b>Course Title:</b>  Computer Architecture and Organization<br><b>Lecturer:</b>  Mr O. Adeleke<br><b>No. of Units:</b> 4<br><b>Course Duration:</b>One hour of theory.<br><b>Status:</b> Compulsory<br><b>Course Email Address:</b><br><b>Course Materials:</b><a target=\"_blank\" href=\"https://drive.google.com/folderview?id=19LnikEchXsw5xk5g3N2olaQvLFJkBXrL/\">view materials</a></div> "],
-                        "context_set": ""
-                },{
-                        "tag": "csc 472",
-                        "patterns": [
-                                "csc 472",
-                                "who is the lecturer for csc 472",
-                                "materials for 472",
-                                "hours for csc 472",
-                                "date and time for csc 472"
-                        ],
-                        "responses": [" <div><h3>CSC 412</h3><h4>Computer Architecture and Organization</h4><br><b>Course Title:</b>  Computer Architecture and Organization<br><b>Lecturer:</b>  Mr O. Adeleke<br><b>No. of Units:</b> 4<br><b>Course Duration:</b>One hour of theory.<br><b>Status:</b> Compulsory<br><b>Course Email Address:</b><br><b>Course Materials:</b><a target=\"_blank\" href=\"https://drive.google.com/folderview?id=19LnikEchXsw5xk5g3N2olaQvLFJkBXrL/\">view materials</a></div> "],
-                        "context_set": ""
-                },{
-                        "tag": "csc 452",
-                        "patterns": [
-                                "csc 452",
-                                "who is the lecturer for csc 452",
-                                "materials for 452",
-                                "hours for csc 452",
-                                "date and time for csc 452"
-                        ],
-                        "responses": [" <div><h3>CSC 412</h3><h4>Computer Architecture and Organization</h4><br><b>Course Title:</b>  Computer Architecture and Organization<br><b>Lecturer:</b>  Mr O. Adeleke<br><b>No. of Units:</b> 4<br><b>Course Duration:</b>One hour of theory.<br><b>Status:</b> Compulsory<br><b>Course Email Address:</b><br><b>Course Materials:</b><a target=\"_blank\" href=\"https://drive.google.com/folderview?id=19LnikEchXsw5xk5g3N2olaQvLFJkBXrL/\">view materials</a></div> "],
-                        "context_set": ""
-                },
-                {
-                        "tag": "csc 431",
-                        "patterns": [
-                                "csc 431",
-                                "who is the lecturer for csc 431",
-                                "materials for 431",
-                                "hours for csc 431",
-                                "date and time for csc 431"
-                        ],
-                        "responses": [" <div><h3>CSC 412</h3><h4>Computer Architecture and Organization</h4><br><b>Course Title:</b>  Computer Architecture and Organization<br><b>Lecturer:</b>  Mr O. Adeleke<br><b>No. of Units:</b> 4<br><b>Course Duration:</b>One hour of theory.<br><b>Status:</b> Compulsory<br><b>Course Email Address:</b><br><b>Course Materials:</b><a target=\"_blank\" href=\"https://drive.google.com/folderview?id=19LnikEchXsw5xk5g3N2olaQvLFJkBXrL/\">view materials</a></div> "],
-                        "context_set": ""
-                },{
-                        "tag": "csc 411",
-                        "patterns": [
-                                "csc 411",
-                                "who is the lecturer for csc 411",
-                                "materials for 411",
-                                "hours for csc 411",
-                                "date and time for csc 411"
-                        ],
-                        "responses": [" <div><h3>CSC 412</h3><h4>Computer Architecture and Organization</h4><br><b>Course Title:</b>  Computer Architecture and Organization<br><b>Lecturer:</b>  Mr O. Adeleke<br><b>No. of Units:</b> 4<br><b>Course Duration:</b>One hour of theory.<br><b>Status:</b> Compulsory<br><b>Course Email Address:</b><br><b>Course Materials:</b><a target=\"_blank\" href=\"https://drive.google.com/folderview?id=19LnikEchXsw5xk5g3N2olaQvLFJkBXrL/\">view materials</a></div> "],
-                        "context_set": ""
                 },
                 {
                         "tag": "course registration",
@@ -349,10 +181,8 @@
                                 "course registration",
                                 "tell me about course registration",
                                 "give me details about course registration",
-                                "can you help me with details about course registration",
-                                "i will like to register my courses",
-                                "register course",
-                                "400l course registration"
+                                "can you help me with details abput course registration",
+                                "can you help me with information about course registration"
                         ],
                         "responses": [
                                 "Course registration starts first week of registation"
@@ -360,21 +190,18 @@
                         "context_set": ""
                 },
                 {
-                        "tag": "dues",
+                        "tag": "fees",
                         "patterns": [
                                 "information about fee",
                                 "information on fee",
                                 "tell me the fee",
                                 "departmental fee",
                                 "fee",
-                                "departmental dues",
-                                "dues",
                                 "what is this year department fee",
                                 "what is the fees of each year",
                                 "what is fee",
                                 "what is the fees",
                                 "how much is the fees",
-                                "how much 400l dues",
                                 "fees for fourth year",
                                 "fees for 400 level",
                                 "400l fee?",
@@ -418,7 +245,7 @@
                                 "number of floors in bulding",
                                 "department infrastructure",
                                 "departments and labs",
-                                "department tour",
+                                "departments",
                                 "labs",
                                 "canteen",
                                 "infrastructure of the department",
@@ -426,21 +253,10 @@
                                 "what about infrastructure"
                         ],
                         "responses": [
-                                "For  Department tour please visit the following link.",
+                                " For campus tour please visit the following link.",
                                 "For infrastructure details visit "
                         ],
                         "context_set": ""
-                },{
-                        "tag": "History",
-                        "patterns": [
-                                "department history",
-                                "computer department history",
-                                "history"
-                        ],
-                        "responses": [
-                                "<div><h4> HISTORY: DEPARTMENT OF COMPUTER SCIENCE</h4><b>Name of Department:</b> COMPUTER SCIENCE <br><br><b>Date of establishment:</b> 1974 <br><h4><Strong>History</Strong></h4><br><p>The proposal for the department was written in 1973, and the department was established in 1974.The first set of 21 Computer Science graduates finished in 1976.  The department was conceived as a means of training manpower to meet the demand for increasing computerization.</p> <p>The Department started with two academic staff, Professor Olu Longe and Dr. J. O. Adeniyi and six non-academic staff. Professor Olu Longe was the <br>founding Head of Department. </p><p>Dr J.O. Adeniyi served as Acting Head of Department of Computer Science <br>between 1988 and 1990. Between 1990 and 1991 the Department was headed by the Dean of the Faculty of Science, Professor Ayo Babalola of the Department of Physics, while Dr S.O. Ojo served as Departmental coordinator. Between 1991 and 1998, Professor Olu Longe served as Head of Department. Between 1998 and 1999 the Department was headed by the Dean of the Faculty of Science, Professor Idowu Iweibo of the Department of Chemistry. </p></div>"
-                             ],
-                       "context_set": ""
                 },
                 {
                         "tag": "event",
@@ -460,26 +276,27 @@
                                 "what about events"
                         ],
                         "responses": [
-                                "Our department organizes various events during academics. Many Events are useful for technical skils and recreational activities.There are many events which are held by deparments.<a target=\"_blank\" href=\"https://NacosBot.ac.in/news-and-events/news-notifications/\"> here</a>",
+                                "Our department organizes various events during academics.Many Events are useful for technical skils and recreational activities.There are many events which are held by deparments.<a target=\"_blank\" href=\"https://NacosBot.ac.in/news-and-events/news-notifications/\"> here</a>",
                                 "Our Department organizes FESTIVAL every year.There are major 2 fest in our department."
                         ],
                         "context_set": ""
                 },
                 {
-                        "tag": "Change of Course",
+                        "tag": "Transfer",
                         "patterns": [
-                                "document to bring for change of course",
-                                "documents needed for change of course",
-                                "documents needed at the time of change of course",
-                                "documents needed during change of course",
-                                "documents required for change of course",
-                                "documents required at the time of change of course",
-                                "documents required during change of course",
-                                "What document are required for change of course",
-                                "change of course documents",
-                                "change of course",
-                                "required steps for change of course",
-                                "steps for change of course"
+                                "document to bring",
+                                "documents needed for admision",
+                                "documents needed at the time of defer",
+                                "documents needed during defer",
+                                "documents required for admision",
+                                "documents required at the time of defer",
+                                "documents required during defer",
+                                "What document are required for defer",
+                                "Which document to bring for defer",
+                                "documents",
+                                "what documents do i need",
+                                "what documents do I need for defer",
+                                "documents needed"
                         ],
                         "responses": [
                                 "To know more about documents required visit<a target=\"_blank\" href=\"https://NacosBot.ac.in/academics/defers/list-of-document-required/\"> here</a>"
@@ -487,29 +304,26 @@
                         "context_set": ""
                 },
                 {
-                        "tag": "suspension of studies",
+                        "tag": "Defer",
                         "patterns": [
-                                "document to bring for suspension of studies",
-                                "How to suspend my studies for a semester",
-                                "How to suspend my studies for a semester",
-                                "How to suspend studies for a session",
-                                "suspension of studies for a session",
-                                "suspension of studies for a semester",
-                                "suspension of studies",
-                                "documents needed for suspension of studies",
-                                "documents needed at the time of suspension of studies",
-                                "documents needed during suspension of studies",
-                                "documents required for suspension of studies",
-                                "documents required at the time of suspension of studies",
-                                "documents required during suspension of studies",
-                                "What document are required for suspension of studies",
-                                "Which document to bring for suspension of studies",
-                                "documents suspend my studies",
-                                "what documents do i need for suspension of studies",
-                                "steps for suspension of studies",
-                                "steps for required for suspension of studies",
-                                "steps for required to suspend my studies",
-                                "documents needed for suspension of studies"
+                                "document to bring for defering",
+                                "How to defer a semester",
+                                "How to defer a semester",
+                                "How to defer a semester",
+                                "defer a session",
+                                "defer a session",
+                                "deferring",
+                                "documents needed for defering",
+                                "documents needed at the time of defer",
+                                "documents needed during defer",
+                                "documents required for admision",
+                                "documents required at the time of defer",
+                                "documents required during defer",
+                                "What document are required for defer",
+                                "Which document to bring for defer",
+                                "documents",
+                                "what documents do i need to defer",
+                                "documents needed to defer"
                         ],
                         "responses": [
                                 "To know more about documents required. Download the following document "
@@ -557,7 +371,22 @@
                         ],
                         "context_set": ""
                 },
-                
+                {
+                        "tag": "HOD",
+                        "patterns": [
+                                "Who is Computer Department HOD",
+                                "Who is HOD of Computer department",
+                                "Where is HOD",
+                                "computer department hod",
+                                "name of computer department hod",
+                                "Who is HOD",
+                                "HOD"
+                        ],
+                        "responses": [
+                                "Mr. Dada Joshua is Current HOD who is available on the 4th floor."
+                        ],
+                        "context_set": ""
+                },
                 {
                         "tag": "facilities",
                         "patterns": [
@@ -659,10 +488,39 @@
                         ],
                         "responses": [
                                 "I can answer to low-intermediate questions regarding department",
-                                "You can ask me questions regarding the department, and i will try to answer them"
+                                "You can ask me questions regarding department, and i will try to answer them"
                         ],
                         "context_set": ""
+                },
+                {
+                        "tag": "faculty portal",
+                        "patterns": [
+                                "faculty portal",
+                                "give student faculty link",
+                                "faculty portal?",
+                                "where is faculty portal",
+                                "NacosBot fcaulty portal",
+                                "how to get faculty portal",
+                                "please provide faculty portal link"
+                        ],
+                        "responses": [
+                                "For Faculty portal link visit<a target=\"_blank\" href=/\"https:/\">here</a>"
+                        ]
+                },
+                {
+                        "tag": "sports",
+                        "patterns": [
+                                "sports and games",
+                                "give sports details",
+                                "sports infrastructure",
+                                "sports facilities",
+                                "NacosBot sports facilities",
+                                "information about sports",
+                                "please provide sports and games information"
+                        ],
+                        "responses": [
+                                "Computer Department encourages all-round development of students and hence provides sports facilities in the campus. For more details visit<a target=\"_blank\" href=/\"https://NacosBot.ac.in/students/sports-and-games/\">here</a>"
+                        ]
                 }
-                
         ]
 }
