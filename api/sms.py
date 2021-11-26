@@ -104,6 +104,14 @@ def delete_student():
     if not check_for_matric_no:
         return jsonify(status='failed', msg=f'No student with matric number {matric_no}')
 
+    student_feedbacks = FeedBack.query.filter_by(student=check_for_matric_no).all()
+
+    if len(student_feedbacks) == 0:
+        pass 
+    else:
+        for feedbacks in student_feedbacks:
+            db.session.delete(feedbacks)    
+
     db.session.delete(check_for_matric_no)
     db.session.commit()
 
@@ -200,25 +208,9 @@ def chat_bot():
     if message[0] == ' ':
         message = message.replace(' ', '',1)
     
-    matched_tags = [tag for tag in tags if message in tag]
-    response = 'kindly select one of these options below'
     bot_response_time = getTime()
 
-    '''if len(matched_tags) > 1:
-        options = matched_tags
 
-        msg_log = ChatLog(
-            student = student_id,
-            bot_msg = response,
-            student_msg = message,
-            student_time = student_time,
-            bot_response_time = bot_response_time
-        )
-
-        db.session.add(msg_log)
-        db.session.commit()
-
-        return jsonify(status = 'success', options=options, response=response, use_details=False)'''
 
     model = load_model("./api/model/chatbot_model.h5")
 
@@ -349,6 +341,7 @@ def student_feedback():
 @cross_origin()
 def feedbacks():
     feedbacks = FeedBack.query.all()
+    
     serialized_feedback = [*map(serialize_feedback, feedbacks)]
     return jsonify(status='success', feedbacks=serialized_feedback)
 
@@ -364,8 +357,6 @@ def student_profile():
     student_profile = dict(name=student.last_name + ' ' + student.first_name, matric_no = student.student_id, level=student.level)
 
     return jsonify(status='success', student_profile=student_profile)
-
-
 
 @sms.route('/chat-log')
 @cross_origin()

@@ -6,7 +6,7 @@ app = create_app(config_name = 'test')
 
 @app.shell_context_processor
 def make_shell_context():
-    return dict(db=db, Student = Student)
+    return dict(db=db, Student = Student, FeedBack=FeedBack)
 
 with app.app_context():
     db.create_all()
