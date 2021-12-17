@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request, make_response, g, Flask
+from flask import Blueprint, jsonify, request, make_response, g, send_from_directory
 from flask_jwt_extended.utils import get_current_user
 from keras.utils.io_utils import path_to_string
 from nltk import probability
@@ -18,6 +18,7 @@ from .view_functions import (
                             )
 from .model.train import train_bot
 from keras.models import load_model
+import os
 
 
 
@@ -367,6 +368,16 @@ def chat_log():
     serialized_logs = [*map(log_serializer, logs)]
 
     return jsonify(status='success', log = serialized_logs)
+
+
+@sms.route('/download/<path:filename>',methods=['GET'])
+def download(filename):
+    
+
+    filepath = os.path.join(os.path.join(os.getcwd(), 'api'), 'upload') #+ '\uploads'
+    #filepath = filepath, 'upload')
+    
+    return send_from_directory(filepath, filename)
 
 
 

@@ -674,7 +674,7 @@
                             
                     ],
                     "responses": [
-                            "<div><p>Click on:<p><a target=\"_blank\" href=\"/api/upload/exam-timetable.doc\" download> <img src=\"timetable.jpg\" alt=\"W3Schools\" width=\"104\" height=\"142\"></a></div>."
+                            "<div><p>Click on:<p><a target=\"_blank\" href='http://localhost:5000/sms/download/exam-timetable.doc' download> <img src=\"timetable.jpg\" alt=\"W3Schools\" width=\"104\" height=\"142\"></a></div>."
                     ],
                     "context_set": ""
             },
