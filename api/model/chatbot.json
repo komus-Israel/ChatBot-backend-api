@@ -674,7 +674,7 @@
                             
                     ],
                     "responses": [
-                            "<div><p>Click on:<p><a target=\"_blank\" href='http://localhost:5000/sms/download/exam-timetable.doc' download> <img src=\"timetable.jpg\" alt=\"W3Schools\" width=\"104\" height=\"142\"></a></div>."
+                            "<div><p>Click on:<p><a target=\"_blank\" href='https://uirms.herokuapp.com/sms/download/exam-timetable.doc' download> <img src=\"timetable.jpg\" alt=\"W3Schools\" width=\"104\" height=\"142\"></a></div>."
                     ],
                     "context_set": ""
             },
@@ -693,7 +693,23 @@
                             "<div><p>Click on:<p><a target=\"_blank\" href=\"timetable.jpg\" download> <img src=\"timetable.jpg\" alt=\"W3Schools\" width=\"104\" height=\"142\"></a></div>."
                     ],
                     "context_set": ""
-            }
+            },
+            {
+                "tag": "HOD",
+                "patterns": [
+                        "Who is Computer Department HOD",
+                        "Who is HOD of Computer department",
+                        "Where is HOD",
+                        "computer department hod",
+                        "name of computer department hod",
+                        "Who is HOD",
+                        "HOD"
+                ],
+                "responses": [" <div> <h1>Dr. Ibiyinka T. Ayorinde</h1> <br> <b> NAME : </b> Ibiyinka Temilola, AYORINDE <br> <br><b> ACADEMIC AND PROFESSIONAL QUALIFICATION:</b>B.Tech. (Hons) Computer Science 1995, M.Sc. Computer Science 2005, Ph.D Computer Science 2014.<br><br> <b> DESIGNATION: </b>Senior Lecturer <br> <br><b> AREA OF SPECIALISATION:</b>Knowledge Representation, Software Engineering and Data <br> <br><b> OFFICE ADDRESS:</b>Block A ,Room 10, Computer Science Building. <br><br><b> PHONE NUMBER: </b>+2348035289814</div>"],
+                "context_set": ""
+        }
+            
+            
                 
         ]
 }

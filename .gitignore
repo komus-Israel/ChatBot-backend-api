@@ -2,3 +2,5 @@
 /public
 /tmp1
 /tmp
+.env
+.flaskenv

@@ -93,7 +93,7 @@ def getResponse(ints, intents_json):
             "I'm sorry, I do not really understand your request"
             ])
     
-
+    
     return dict(response = result, options = options)
 
 def json_patterns():
