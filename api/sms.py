@@ -149,7 +149,7 @@ def search_student():
 def upload_content():
     
     file = request.files['file']
-    file.save(f'./api/download/{file.filename}')
+    file.save(f'./api/upload/{file.filename}')
 
 
     return jsonify(status='success', msg='uploaded successfully')

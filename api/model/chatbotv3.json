@@ -71,6 +71,37 @@
                         "context_set": ""
                 },
                 {
+                        "tag": "HOD",
+                        "patterns": [
+                                "Who is Computer Department HOD",
+                                "Who is HOD of Computer department",
+                                "Where is HOD",
+                                "computer department hod",
+                                "name of computer department hod",
+                                "Who is HOD",
+                                "HOD"
+                        ],
+                        "responses": [" <div> <h1>Dr. Ibiyinka T. Ayorinde</h1> <br> <b> NAME : </b> Ibiyinka Temilola, AYORINDE <br> <br><b> ACADEMIC AND PROFESSIONAL QUALIFICATION:</b>B.Tech. (Hons) Computer Science 1995, M.Sc. Computer Science 2005, Ph.D Computer Science 2014.<br><br> <b> DESIGNATION: </b>Senior Lecturer <br> <br><b> AREA OF SPECIALISATION:</b>Knowledge Representation, Software Engineering and Data <br> <br><b> OFFICE ADDRESS:</b>Block A ,Room 10, Computer Science Building. <br><br><b> PHONE NUMBER: </b>+2348035289814</div>"],
+                        "context_set": ""
+                },
+                {
+                        "tag": "course adviser",
+                        "patterns": [
+                                "Who is Computer Department 400l course adviser",
+                                "Who is course adviser for 400l",
+                                "Where is 400l adviser",
+                                "computer department 400l course adviser",
+                                "name of computer department course adviser",
+                                "Who is 400l adviser",
+                                "400l adviser"
+                        ],
+                        "responses": [
+                                " "
+                        ],
+                        "context_set": ""
+                },
+               
+                {
                         "tag": "name",
                         "patterns": [
                                 "name",
@@ -144,6 +175,7 @@
                         ],
                         "context_set": ""
                 },
+                
                 {
                         "tag": "course materials",
                         "patterns": [
@@ -193,6 +225,54 @@
                                 "course materials"                        ]
                 },
                 {
+                        "tag": "Timetable",
+                        "patterns": [
+                                "400l timetable",
+                                "computer science timetable",
+                                "timetable"
+                                
+                        ],
+                        "responses": [
+                                "Select an option let's continue"
+                        
+                        ],
+                        "context_set": "",
+                        "options":[
+                                "Examination Timetable",
+                                "Class Timetable"                        ]
+                },
+                {
+                        "tag": "Class timetable",
+                        "patterns": [
+                                "computer science department timetable for 2020/2021 session",
+                                "computer science department timetable for this session",
+                                "class timetable",
+                                "department timetable for 2020/2021 session",
+                                "timetable for 2020/2021 session"
+                                
+                        ],
+                        "responses": [
+                                "<div><p>Click on:<p><a target=\"_blank\" href=\"/api/upload/exam-timetable.doc\" download> <img src=\"timetable.jpg\" alt=\"W3Schools\" width=\"104\" height=\"142\"></a></div>."
+                        ],
+                        "context_set": ""
+                },
+                
+                {
+                        "tag": "Exam timetable",
+                        "patterns": [
+                                "computer science department exam timetable for 2020/2021 session",
+                                "computer science department  eaxam timetable for this session",
+                                "exam timetable",
+                                "department exam timetable for 2020/2021 session",
+                                "exam timetable for 2020/2021 session"
+                                
+                        ],
+                        "responses": [
+                                "<div><p>Click on:<p><a target=\"_blank\" href=\"timetable.jpg\" download> <img src=\"timetable.jpg\" alt=\"W3Schools\" width=\"104\" height=\"142\"></a></div>."
+                        ],
+                        "context_set": ""
+                },
+                {
                         "tag": "course details",
                         "patterns": [
                                 "course details",
@@ -238,7 +318,7 @@
                                 "hours for csc 433",
                                 "date and time for csc 433"
                         ],
-                        "responses": [" <div><h3>CSC 412</h3><h4>Computer Architecture and Organization</h4><br><b>Course Title:</b>  Computer Architecture and Organization<br><b>Lecturer:</b>  Mr O. Adeleke<br><b>No. of Units:</b> 4<br><b>Course Duration:</b>One hour of theory.<br><b>Status:</b> Compulsory<br><b>Course Email Address:</b><br><b>Course Materials:</b><a target=\"_blank\" href=\"https://drive.google.com/folderview?id=19LnikEchXsw5xk5g3N2olaQvLFJkBXrL/\">view materials</a></div> "],
+                        "responses": [" <div><h3>CSC 433</h3><h4>SOFTWARE ENGINEERING II</h4><br><b>Course Title:</b>  SOFTWARE ENGINEERING II<br><b>Lecturer:</b> DR Khadijat  T. Bamgbade<br><b>No. of Units:</b> 3<br><b>Course Duration:</b>One hour of theory.<br><b>Status:</b> Required<br><b>Course Email Address:</b><br><b>Course Materials:</b><a target=\"_blank\" href=\"https://drive.google.com/folderview?id=19LnikEchXsw5xk5g3N2olaQvLFJkBXrL/\">view materials</a></div> "],
                         "context_set": ""
                 },
                 {
@@ -355,7 +435,7 @@
                                 "400l course registration"
                         ],
                         "responses": [
-                                "Course registration starts first week of registation"
+                                "<div><h2>REGISTRATION GUIDELINES FOR RETURNING UNDERGRADUATE students - 2020/2021 Session </h2><h3>Important Notes:</h3><ol> <li>Registration process is completely online</li><li>Visit your departmental page on the University website www.ui.edu.ng for Course Advisory and additional information</li><li>Contact your course level Adviser for inquiries on courses</li><li>Proceed to the registration portal for payment and course registration</li><li>Login again to the portal after registration to confirm approval of registered courses</li><li>You can only Register for Courses after Successful Payment of Fees</li><li>Check your institutional email for instructions on how to proceed to Lectures. Please check spam mail folder if message is not found in inbox.</li><li>If you have not accessed the University student email before, go to gmail.com, Your username is a combination of first character of your first name, your surname and last 3 digits of your Matriculation number (e.g. rbogunro456@stu.ui.edu.ng). Your initial password is “password”. You will be prompted to change it immediately</li> </ol></div>"
                         ],
                         "context_set": ""
                 },
@@ -482,7 +562,7 @@
                                 "steps for change of course"
                         ],
                         "responses": [
-                                "To know more about documents required visit<a target=\"_blank\" href=\"https://NacosBot.ac.in/academics/defers/list-of-document-required/\"> here</a>"
+                                "  <div><h2>CHANGE OF COURSE ADMISSION LIST</h2><h3>AGRICULTURE|ARTS|EDUCATION|COLLEGE OF MEDICINE|LAW|PHARMACY|SCIENCE|SOCIAL SCIENCE|TECHNOLOGY|VETERINARY</h3> In view of the approval given by JAMB on the results of the 21st October 9th November 2020 interactive sessions and the Direct Entry submissions, the University of Ibadan hereby notify the successful candidates of the offer of provisional admission into the academic program indicated against their names.The candidates should kindly signify acceptance of the admission offer by:<ol><li> Paying the acceptance fee of seven thousand five hundred naira only (N7,500.00) into the AFRIBANK Plc, UI Branch, University Student Fee Account No. 0412848246618, at the nearest AFRIBANK Plc. Branch nationwide.</li><li> Printing a copy of the ACCEPTANCE FORM and submitting the filled form with evidence of the acceptance fee to the Admissions office, University of Ibadan. <br> Please note that you will not be allowed to matriculate and therefore become a bona-fide student of this University, if you do not complete all the stipulated registration processes.</li><li> Visit the BIODATA FORM page on <a target=\"_blank\" href=\"https://www.admissions.ui.edu.ng/biodata/\">link</a> to upload your picture and signature. You are free to correct any information that is/are not properly displayed, however ensure that the information is not different from the information </li>    you supplied to JAMB and the University earlier.</ol></div>"
                         ],
                         "context_set": ""
                 },
@@ -662,38 +742,7 @@
                                 "You can ask me questions regarding the department, and i will try to answer them"
                         ],
                         "context_set": ""
-                },
-                {
-                    "tag": "Class timetable",
-                    "patterns": [
-                            "computer science department timetable for 2020/2021 session",
-                            "computer science department timetable for this session",
-                            "class timetable",
-                            "department timetable for 2020/2021 session",
-                            "timetable for 2020/2021 session"
-                            
-                    ],
-                    "responses": [
-                            "<div><p>Click on:<p><a target=\"_blank\" href=\"/api/upload/exam-timetable.doc\" download> <img src=\"timetable.jpg\" alt=\"W3Schools\" width=\"104\" height=\"142\"></a></div>."
-                    ],
-                    "context_set": ""
-            },
-            
-            {
-                    "tag": "Exam timetable",
-                    "patterns": [
-                            "computer science department exam timetable for 2020/2021 session",
-                            "computer science department  eaxam timetable for this session",
-                            "exam timetable",
-                            "department exam timetable for 2020/2021 session",
-                            "exam timetable for 2020/2021 session"
-                            
-                    ],
-                    "responses": [
-                            "<div><p>Click on:<p><a target=\"_blank\" href=\"timetable.jpg\" download> <img src=\"timetable.jpg\" alt=\"W3Schools\" width=\"104\" height=\"142\"></a></div>."
-                    ],
-                    "context_set": ""
-            }
+                }
                 
         ]
 }
